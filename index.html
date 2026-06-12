@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Convite Especial</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phone-container">
+        
+        <div class="screen active" id="tela1">
+            <div class="emoji" id="main-emoji">🥺</div>
+            <h2>Gostaria<br>de sair comigo?</h2>
+            <div class="btn-container">
+                <button class="btn" id="btn-sim" onclick="proximaTela(2)">SIM</button>
+                <button class="btn" id="btn-nao">NÃO</button>
+            </div>
+        </div>
+
+        <div class="screen" id="tela2">
+            <div class="emoji">🐱</div>
+            <h2>Quando?</h2>
+            
+            <div class="booking-container" id="booking-box">
+                <p>Dia</p>
+                <input type="date" id="date-input" value="2026-06-12" onfocus="ativarBorda(true)" onblur="ativarBorda(false)">
+                <p>Horário</p>
+                <input type="time" id="time-input" value="19:00" onfocus="ativarBorda(true)" onblur="ativarBorda(false)">
+            </div>
+            
+            <button class="btn" onclick="proximaTela(3)">CONFIRMAR</button>
+        </div>
+
+        <div class="screen" id="tela3">
+            <div class="emoji">🐾</div>
+            <h2>Qual prefere?</h2>
+            <div class="options-grid">
+                <div class="option-card" onclick="selecionarComida(this, 'Hambúrguer 🍔')">🍔 Hambúrguer</div>
+                <div class="option-card" onclick="selecionarComida(this, 'Sushi 🍣')">🍣 Sushi</div>
+                <div class="option-card" onclick="selecionarComida(this, 'Massas 🍝')">🍝 Massas</div>
+                <div class="option-card" onclick="selecionarComida(this, 'Pizza 🍕')">🍕 Pizza</div>
+            </div>
+            <button class="btn" onclick="proximaTela(4)">PRONTO!</button>
+        </div>
+
+        <div class="screen" id="tela4">
+            <div class="emoji">🐈‍⬛</div>
+            <h2>Confirmado.</h2>
+            <p>Até breve. 🌹</p>
+            
+            <div class="summary-box">
+                <p>📅 Data <span id="resumo-data">--/--/----</span></p>
+                <p>⏰ Horário <span id="resumo-hora">00:00</span></p>
+                <p>🍽️ Cardápio <span id="resumo-comida">---</span></p>
+            </div>
+
+            <button class="btn btn-agenda" onclick="salvarNaAgenda()">📅 SALVAR NA AGENDA</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
